@@ -1,3 +1,3 @@
-# the code below almost works
+# Simple hello world
 
 print("hello world")
