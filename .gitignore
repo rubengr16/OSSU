@@ -1,3 +1,6 @@
 # Pdfs, books, presentations and other didactical materials
 **/*.pdf
 **/*.pptx
+
+# My own timeline
+ComputerScience/"CS Timeline Estimate degree.xlsx"
