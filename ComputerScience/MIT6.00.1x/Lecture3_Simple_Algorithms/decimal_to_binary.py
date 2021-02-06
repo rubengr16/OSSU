@@ -5,7 +5,7 @@ resul = ''  # result is initialized as an empty string
 is_neg = None
 
 if num < 0:
-    is_neg = True
+    is_neg = True  # Flag for negative number
     num = abs(num)
 else:
     is_neg = False
@@ -14,7 +14,7 @@ if num == 0:
     resul = '0'
 else:
     while num > 0:
-        resul = str(num % 2) + resul
+        resul = str(num % 2) + resul  # Process for conversion
         num //= 2
     if is_neg:
         resul = '-' + resul

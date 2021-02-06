@@ -7,26 +7,21 @@ epsilon = 0.001
 p = 0
 
 if num < 0:
-    is_neg = True
+    is_neg = True  # Flag for negative
     num = abs(num)
 else:
     is_neg = False
 
-if int(num) == 0:
-    is_lower = True
-else:
-    is_lower = False
-
-while (num * (2 ** p)) % 1 > epsilon:
+while (num * (2 ** p)) % 1 > epsilon:  # Calculates the power of 2 in order to have an accurate integral representation of the floating number
     p += 1
 
-num = int(num * (2 ** p))
+num = int(num * (2 ** p))  # Conversion to integer through power of 2
 
 if num == 0:
     resul = '0'
 else:
     while num > 0:
-        resul = str(num % 2) + resul
+        resul = str(num % 2) + resul  # Decimal to binary power
         num //= 2
 
 resul = '0.' + '0' * (p - len(resul)) + resul

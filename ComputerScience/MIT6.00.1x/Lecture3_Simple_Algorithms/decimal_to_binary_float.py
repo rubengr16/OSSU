@@ -10,7 +10,7 @@ epsilon = 0.001
 p = 0
 
 if intgr < 0:
-    is_neg = True
+    is_neg = True  # Flag for negative number
     intgr = abs(intgr)
 else:
     is_neg = False
@@ -18,9 +18,9 @@ else:
 if intgr == 0:
     resul_intgr = '0'
 else:
-    if intgr != 0:
+    if intgr != 0:  # If there is not integer part
         while intgr > 0:
-            resul_intgr = str(intgr % 2) + resul_intgr
+            resul_intgr = str(intgr % 2) + resul_intgr  # Decimal to binary conversion
             intgr //= 2
 
         if is_neg:
