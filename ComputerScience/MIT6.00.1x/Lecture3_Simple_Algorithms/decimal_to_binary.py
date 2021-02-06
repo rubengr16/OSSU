@@ -1,13 +1,14 @@
 # Receives an integer as input in decimal representation and converts it to binary
-num = int(input('Enter a number to convert to binary: '))
+num = int(input('Enter an integer to convert to binary: '))
 print(num, 'in binary is', end=' ')
 resul = ''  # result is initialized as an empty string
+is_neg = None
 
 if num < 0:
-    isNeg = True
+    is_neg = True
     num = abs(num)
 else:
-    isNeg = False
+    is_neg = False
 
 if num == 0:
     resul = '0'
@@ -15,7 +16,7 @@ else:
     while num > 0:
         resul = str(num % 2) + resul
         num //= 2
-    if isNeg:
+    if is_neg:
         resul = '-' + resul
 
 print(resul)
