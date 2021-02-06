@@ -1,9 +1,7 @@
-#
-bin_num = input('Enter a binary number to convert to hexadecimal: ')
+# Given an integer through input, it converts it to decimal
+bin_num = input('Enter a binary integer to convert to hexadecimal: ')
 print(bin_num, 'in hexadecimal is', end=' ')
 resul = ''
-act = None
-hex_num = None
 
 while len(bin_num) > 0:
     if len(bin_num) > 4:
