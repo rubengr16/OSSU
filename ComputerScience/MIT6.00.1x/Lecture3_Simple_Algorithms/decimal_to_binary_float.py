@@ -1,4 +1,4 @@
-# Receives an integer as input in decimal representation between -1 and 1 and converts it to binary
+# Receives an integer as input in decimal representation and converts it to binary
 num = float(input('Enter a number to convert to binary: '))
 print(num, 'in binary is', end=' ')
 resul_intgr = ''  # results are initialized as an empty string
