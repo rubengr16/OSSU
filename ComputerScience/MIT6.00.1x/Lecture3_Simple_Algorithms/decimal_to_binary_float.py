@@ -12,30 +12,31 @@ p = 0
 if intgr < 0:
     is_neg = True  # Flag for negative number
     intgr = abs(intgr)
+    flt = abs(flt)
 else:
     is_neg = False
 
-if intgr == 0:
-    resul_intgr = '0'
-else:
-    if intgr != 0:  # If there is not integer part
-        while intgr > 0:
-            resul_intgr = str(intgr % 2) + resul_intgr  # Decimal to binary conversion
-            intgr //= 2
 
+for i in range(2):
+    resul_aux = ''  # result_aux is initialized as an empty string
+    if i == 0:
+        aux = intgr
+    else:
+        aux = flt
+        while (flt * (2 ** p)) % 1 > epsilon:
+            p += 1
+        aux = int(aux * (2 ** p))
+
+    if aux == 0:
+        resul_aux = '0'
+    while aux > 0:
+        n = aux % 2
+        resul_aux = str(n) + resul_aux  # Process for conversion
+        aux //= 2
+
+    if i == 0:
         if is_neg:
-            resul_intgr = '-' + resul_intgr
-
-if flt != 0:
-    while (flt * (2 ** p)) % 1 > epsilon:
-        p += 1
-
-    flt = int(flt * (2 ** p))
-
-    while flt > 0:
-        resul_flt = str(flt % 2) + resul_flt
-        flt //= 2
-
-    print(str(resul_intgr) + '.' + '0' * (p - len(resul_flt)) + (resul_flt))
-else:
-    print(str(resul_intgr))
+            resul_aux = '-' + resul_aux
+        print(str(resul_aux), end='')
+    elif resul_aux != '':
+        print('.' + '0' * (p - len(resul_aux)) + (resul_aux))
