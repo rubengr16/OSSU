@@ -1,12 +1,13 @@
-# Given an integer in hexadecimal through input, it converts it to binary
-hex_num = input('Enter a hexadecimal integer to convert to binary: ')
-print(hex_num, 'in binary is', end=' ')
+# Converts a hexadecimal number (input) to binary number
+hex_num = input('Enter a hexadecimal number to convert to binary: ')  # Unnecesary conversion, just for assuring '.' is included in the string
+print(hex_num, 'in decimal is', end=' ')
 is_neg = None
 resul = ''
 
+
 if hex_num[0] == '-':
     is_neg = True
-    hex_num = hex_num[1:]
+    hex_num = hex_num[1:]  # Eliminates the '-'
 else:
     is_neg = False
 

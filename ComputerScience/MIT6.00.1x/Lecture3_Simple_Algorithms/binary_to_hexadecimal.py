@@ -1,4 +1,4 @@
-# Given an integer through input, it converts it to decimal
+# Given a binary integer through input, it converts it to decimal
 bin_num = input('Enter a binary integer to convert to hexadecimal: ')
 print(bin_num, 'in hexadecimal is', end=' ')
 is_neg = None
