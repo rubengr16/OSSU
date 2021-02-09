@@ -1,7 +1,7 @@
 # Python function, fourthPower, that takes in one number and returns that value raised to the fourth power
 def fourthPower(x):
     '''
-    Input: x, int or float.
+    Input: x: int or float.
     Returns: the fourth power of x
     '''
     def square(x):
