@@ -2,13 +2,25 @@
 # based on a boolean value (input, reverse)
 def printName(firstName, lastName, reverse):
     """
-    Input: firstName, lastName: two str
-           reverse: bool
 
-    Output: if reverse is True prints firstly the lastName ', ' and firstName
-            otherwise prints firstName followed by lastName
+    Parameters
+    ----------
+    firstName : str
+        Name.
+    lastName : str
+        Surname.
+    reverse : bool
+        Decides the order of printing the other parameters.
 
-    Returns: None
+    Output
+    ------
+    If reverse is True prints firstly the lastName ', ' and firstName,
+    otherwise prints firstName followed by lastName
+
+    Returns
+    -------
+    None.
+
     """
     if reverse:
         print(lastName + ',', firstName)

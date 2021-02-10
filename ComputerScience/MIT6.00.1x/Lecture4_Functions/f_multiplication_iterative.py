@@ -2,12 +2,22 @@
 # returns the multiplication of both without using *
 def multIter(a, b):
     """
-    Input: a, b: two int
 
-    Returns: resul: the result of multiplying a by b
+    Parameters
+    ----------
+    a : int and float
+        Value to multiply.
+    b : int and float
+        Value to multiply.
+
+    Returns
+    -------
+    int or float
+        Result of multiplying a by b.
+
     """
     resul = 0
     while b > 0:
-        resul += a
+        resul += a  # Successive addition b times
         b -= 1
     return resul
