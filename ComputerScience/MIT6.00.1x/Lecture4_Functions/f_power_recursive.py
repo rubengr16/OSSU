@@ -1,7 +1,9 @@
-# Iterative function iterPower(base, exp) that calculates the exponential base^exp  by simply using successive multiplication
+# Iterative function iterPower(base, exp), calculates the exponential base^exp
+# by simply using successive multiplication
 def powerRecur(base, exp):
     '''
     Input: base: int or float, exp: int >= 0
+
     Returns: base^exp: int or float
     '''
     if exp == 0:
