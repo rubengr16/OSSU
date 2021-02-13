@@ -8,13 +8,13 @@
 balance = float(input('Enter the outstanding balance: '))
 annual_interest_rate = float(input('Enter the annual interest rate: '))
 monthly_interest_rate = annual_interest_rate / 12
-fixed_payment = -10
-temp = balance
+fixed_payment = -10  # Value for making the first test with 0
+temp = None
 
-while temp > 0:
-    fixed_payment += 10
-    temp = balance
-    for _ in range(12):
+while temp is None or temp > 0:
+    fixed_payment += 10  # The guess always goes up 10$
+    temp = balance  # Once our guess is updated because temp is not < 0
+    for _ in range(12):  # Calculates the evolution of the debt
         temp = (temp - fixed_payment) * (1 + monthly_interest_rate)
 
 
