@@ -8,16 +8,23 @@
 balance = float(input('Enter the outstanding balance: '))
 annual_interest_rate = float(input('Enter the annual interest rate: '))
 lower_bound = balance / 12
-upper_bound = (balance * 1 + annual_interest_rate) / 12
+upper_bound = (balance * (1 + annual_interest_rate / 12) ** 12) / 12
 fixed_payment = (lower_bound + upper_bound) / 2
 epsilon = 0.001
+temp = None  # Auxiliar variable to control the remaining debt
 
-while abs(balance - (fixed_payment * 12)) > epsilon:
-    if balance - (fixed_payment * 12) < 0:
-        upper_bound = fixed_payment
-    else:
-        lower_bound = fixed_payment
-    fixed_payment = (lower_bound + upper_bound) / 2
+while temp is None or abs(temp) > epsilon:
+    # While temp is not initialized or debt is greater than money precission
+    if temp is not None:  # if temp is initialized
+        if temp < 0:  # if the guess is too big
+            upper_bound = fixed_payment - 0.01  # Avoids using the same guess
+        else:  # otherwise, the guess is too low
+            lower_bound = fixed_payment + 0.01  # Avoids using the same guess
+        fixed_payment = (lower_bound + upper_bound) / 2
+
+    temp = balance
+    for _ in range(12):  # # Calculates the year's evolution of the debt
+        temp = (temp - fixed_payment) * (1 + annual_interest_rate / 12)
 
 
 print('Lowest Payment:', round(fixed_payment, 2))
