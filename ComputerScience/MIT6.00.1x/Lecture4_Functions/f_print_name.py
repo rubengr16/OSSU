@@ -1,13 +1,13 @@
 # Function which decides how to print a firstName and lastName (input)
 # based on a boolean value (input, reverse)
-def printName(firstName, lastName, reverse):
+def printName(first_name, last_name, reverse):
     """
 
     Parameters
     ----------
-    firstName : str
+    first_name : str
         Name.
-    lastName : str
+    last_name : str
         Surname.
     reverse : bool
         Decides the order of printing the other parameters.
@@ -23,6 +23,6 @@ def printName(firstName, lastName, reverse):
 
     """
     if reverse:
-        print(lastName + ',', firstName)
+        print(last_name + ',', first_name)
     else:
-        print(firstName, lastName)
+        print(first_name, last_name)
