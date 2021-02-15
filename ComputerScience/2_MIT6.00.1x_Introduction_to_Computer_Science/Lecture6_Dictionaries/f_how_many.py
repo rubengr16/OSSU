@@ -16,8 +16,8 @@ def how_many(a_dict):
     """
     count = 0
 
-    for e in a_dict.values():
-        for v in e:
+    for e in a_dict.values():  # Get every value for each key in the dict
+        for v in e:  # Get each element of the list (dictionary's value)
             count += 1
 
     return count

@@ -18,11 +18,11 @@ def biggest(a_dict):
     """
     biggest = None
 
-    for e in a_dict:
-        if biggest is not None:
-            if len(a_dict[biggest]) < len(a_dict[e]):
+    for e in a_dict  # Get every value for each key in the dict
+        if biggest is not None:  # If biggest is initialized
+            if len(a_dict[biggest]) < len(a_dict[e]):  # Actual is better
                 biggest = e
-        else:
+        else:  # Otherwise, biggest is not initialized, biggest is first elem
             biggest = e
 
     return biggest
