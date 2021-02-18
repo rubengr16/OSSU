@@ -1,6 +1,6 @@
 # Receives a program to prompt for a score between 0.0 and 1.0.
 # Out of range prints 'Bad score'
-# >= 0.9 A, >= 8 B, >= 0.7 C, >= 0.6 D, <0.6 F
+# >= 0.9 A, >= 8 B, >= 0.7 C, >= 0.6 D, < 0.6 F
 try:
     score = float(input('Enter score: '))
     if 0.0 <= score and score <= 1.0:
