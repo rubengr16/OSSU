@@ -6,5 +6,3 @@ try:
     # %s stands for string, %d or %i for decimal, %g or %f for float
 except ValueError:
     print('Invalid input')
-
-print('kk %f' % 0.1)
