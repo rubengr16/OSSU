@@ -1,7 +1,7 @@
 # Program which reads numbers until the user enters "done".
-# Once it is enterer, prints out the total, count and average of the numbers.
+# Once it is entered, prints out the total, count and average of the numbers.
 
-total, count = 0, 0
+total, count = 0, 0  # Initialize 2 variables at the same time
 ans = None
 
 while ans is None or ans != 'done':
