@@ -8,14 +8,15 @@ count = 0
 total_spam_confidence = 0
 
 try:
-    f_in = open(FILE_NAME, 'r')
+    f_in = open(FILE_NAME, 'r')  # open file handler
 except FileNotFoundError:
     print('File not found:', FILE_NAME)
     sys.exit()
 
 for line in f_in:
-    if line.startswith('X-DSPAM-Confidence:'):
-        count += 1
+    if line.startswith('X-DSPAM-Confidence:'):  # Searching condition
+        count += 1  # Necessary to calculate the average
         total_spam_confidence += float(line[line.find(':') + 1:])
+        # Get the floating point number
 
 print('Average spam confidence:', total_spam_confidence / count)
