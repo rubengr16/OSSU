@@ -6,14 +6,14 @@ ans = None
 
 while ans is None or ans != 'done':
     ans = input('Enter a number: ')
-    if ans != 'done':
-        try:
-            ans = int(ans)
-            if maxim is None or maxim < ans:
-                maxim = ans
-            if minim is None or minim > ans:
-                minim = ans
-        except ValueError:
+    try:
+        ans = int(ans)
+        if maxim is None or maxim < ans:
+            maxim = ans
+        if minim is None or minim > ans:
+            minim = ans
+    except ValueError:
+        if ans != 'done':
             print('Invalid input')
 
 print('Maximum is', maxim, '\nMinimum is', minim)
