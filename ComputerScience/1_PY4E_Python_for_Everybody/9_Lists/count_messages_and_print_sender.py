@@ -15,7 +15,8 @@ except FileNotFoundError:
 for line in f_in:
     if line.startswith('From '):  # if the line is the separator one
         words = line.split()  # split the line's content into a list
-        print(words[1])  # print the second line's element, the sender
-        count += 1  # add to count a new message
+        if len(words) > 0:
+            print(words[1])  # print the second line's element, the sender
+            count += 1  # add to count a new message
 
 print('There were', count, 'lines in the file with From as the first word')
