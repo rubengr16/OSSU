@@ -4,7 +4,7 @@
 import sys
 
 FILE_NAME = input("Enter the file's name: ")
-count = 0
+count = dict()  # Empty dictionary
 
 try:
     f_in = open(FILE_NAME, 'r')  # open file handler
@@ -15,8 +15,12 @@ except FileNotFoundError:
 for line in f_in:
     if line.startswith('From '):  # if the line is the separator one
         words = line.split()  # split the line's content into a list
-        if len(words) > 2:
-            print(words[1])  # print the second line's element, the sender
-            count += 1  # add to count a new message
+        if len(words) > 3:
+            count[words[2]] = count.get(words[2], 0) + 1
+            # Day is the third word.
+            # dict.get(key, default) searchs if there is already this key in
+            # the dictionary, if it exist returns the value,
+            # if not returns default
 
-print('There were', count, 'lines in the file with From as the first word')
+
+print(count)

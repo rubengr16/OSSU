@@ -4,7 +4,7 @@
 import sys
 
 FILE_NAME = input("Enter the file's name: ")
-count = 0
+count = dict()
 
 try:
     f_in = open(FILE_NAME, 'r')  # open file handler
@@ -16,7 +16,10 @@ for line in f_in:
     if line.startswith('From '):  # if the line is the separator one
         words = line.split()  # split the line's content into a list
         if len(words) > 2:
-            print(words[1])  # print the second line's element, the sender
-            count += 1  # add to count a new message
+            count[words[1]] = count.get(words[1], 0) + 1
+            # Sender is the second word.
+            # dict.get(key, default) searchs if there is already this key in
+            # the dictionary, if it exist returns the value,
+            # if not returns default
 
-print('There were', count, 'lines in the file with From as the first word')
+print(count)
