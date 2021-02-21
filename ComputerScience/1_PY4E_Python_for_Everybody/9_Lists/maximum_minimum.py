@@ -3,7 +3,7 @@
 
 nums = list()  # Empty list
 
-while nums == [] or nums[-1] != 'done':
+while len(nums) < 1 or nums[-1] != 'done':
     nums += [input('Enter a number: ')]
     try:
         nums[-1] = int(nums[-1])
